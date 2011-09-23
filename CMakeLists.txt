@@ -1,5 +1,5 @@
 # Copyright (C) 2007-2011 LuaDist.
-# Created by Peter Draho≈°
+# Created by Peter Drahoö
 # Redistribution and use of this file is allowed according to the terms of the MIT license.
 # For details see the COPYRIGHT file distributed with LuaDist.
 # Please note that the package source code is licensed under its own license.
@@ -23,6 +23,10 @@ install_data ( README )
 install_doc ( doc/ )
 install_test ( tests/ )
 
+
+if (BUILD_STATIC)
+    install_header ( src/lxplib.h )
+endif()
 add_lua_test ( tests/test.lua )
 add_lua_test ( tests/test-lom.lua
   ${CMAKE_CURRENT_SOURCE_DIR}/src # workaround to add modules to package.path (improve?)
